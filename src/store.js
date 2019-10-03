@@ -33,6 +33,12 @@ export default new Vuex.Store({
       // ルーレットストップ
       clearInterval(roulette)
       state.isShuffle = false;
+      // カードに番号があったらtrueにする
+      console.log(state.resultNumber);
+      const hoge = state.cardValues.map((i) => {
+        console.log(i.filter((j) => { state.resultNumber === j.number }));
+      });
+      console.log(hoge)
     },
     init(state) {
       // 初期化する

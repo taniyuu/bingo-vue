@@ -5,12 +5,12 @@
       <tr>
         <th v-for="n in heads" :key="n">{{ n }}</th>
       </tr>
-      <tr v-for="(m, i) in values" :key="i">
+      <tr v-for="(m, i) in cardValues" :key="i">
         <td
-          :class="{ 'bingo-checked' : values[j][i].checked }"
+          :class="{ 'bingo-checked' : cardValues[j][i].checked }"
           v-for="(n, j) in m"
           :key="j"
-        >{{values[j][i].number}}</td>
+        >{{cardValues[j][i].number}}</td>
       </tr>
     </table>
   </div>
@@ -26,37 +26,14 @@
 export default {
   data() {
     return {
-      heads: ["B", "I", "N", "G", "O"],
-      values: []
+      heads: ["B", "I", "N", "G", "O"]
     };
   },
-  created() {
-    this.values = this.createCardValues();
-  },
-  methods: {
-    createCardValues() {
-      // 5×5の配列作成
-      const maxNum = 75;
-      const rowNum = 5;
-      let result = [];
-      for (let i = 0; i < rowNum; i++) {
-        // 候補配列
-        let all = [];
-        for (let j = 1; j <= maxNum / rowNum; j++) {
-          all.push(j + i * (maxNum / rowNum));
-        }
-        // 各列の数値を決める
-        let column = [];
-        for (let j = 0; j < rowNum; j++) {
-          let index = Math.floor(Math.random() * all.length);
-          column.push({ number: all[index], checked: false });
-          all.splice(index, 1);
-        }
-        result.push(column);
-      }
-      // FIXME result[2][2]だけ特別扱いする
-      result[2][2] = { number: "X", checked: true };
-      return result;
+  created() {},
+  methods: {},
+  computed: {
+    cardValues() {
+      return this.$store.state.cardValues;
     }
   }
 };
