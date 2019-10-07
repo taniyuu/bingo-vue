@@ -13,6 +13,10 @@
         >{{cardValues[j][i].number}}</td>
       </tr>
     </table>
+    <div id="bingo-card-stats">
+      <p>リーチの数：{{waitingLines}}</p>
+      <p>ビンゴの数：{{bingoLines}}</p>
+    </div>
   </div>
 </template>
 <script>
@@ -33,7 +37,13 @@ export default {
   methods: {},
   computed: {
     cardValues() {
-      return this.$store.state.cardValues;
+      return this.$store.state.bingoCard.cardValues;
+    },
+    waitingLines() {
+      return this.$store.state.bingoCard.waitingLines;
+    },
+    bingoLines() {
+      return this.$store.state.bingoCard.bingoLines;
     }
   }
 };

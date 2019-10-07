@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 let roulette
 const maxNumber = 75;
+const rowNum = 5;
 
 export default new Vuex.Store({
   state: {
@@ -12,7 +13,12 @@ export default new Vuex.Store({
     resultNumber: null,
     history: [],
     isShuffle: false,
-    cardValues: createCardValues()
+    bingoCard: {
+      cardValues: createCardValues(),
+      waitingLines: 0,
+      bingoLines: 0,
+    }
+
   },
   mutations: {
     start(state) {
@@ -33,12 +39,13 @@ export default new Vuex.Store({
       // ルーレットストップ
       clearInterval(roulette)
       state.isShuffle = false;
-      // カードに番号があったらtrueにして色を変える
-      const hoge = state.cardValues.map((i) => {
+      // カードに番号があったらtrueに色を変える
+      state.bingoCard.cardValues.map((i) => {
         let filteredCard = i.filter((j) => { return state.resultNumber === j.number });
         filteredCard.forEach((j) => { j.checked = true })
-        return filteredCard;
       });
+      // リーチとビンゴの数を計算する
+      [state.bingoCard.waitingLines, state.bingoCard.bingoLines] = calcStats(state.bingoCard.cardValues);
     },
     init(state) {
       // 初期化する
@@ -70,7 +77,6 @@ function allRange() {
 
 function createCardValues() {
   // 5×5の配列作成
-  const rowNum = 5;
   let result = [];
   for (let i = 0; i < rowNum; i++) {
     // 候補配列
@@ -90,4 +96,34 @@ function createCardValues() {
   // FIXME result[2][2]だけ特別扱いする
   result[2][2] = { number: "X", checked: true };
   return result;
+}
+
+function calcStats(cardValues) {
+  const cardLength = cardValues.length;
+  // 縦
+  let targetLines = Object.assign([], cardValues);
+  // 横とななめ
+  let diagonal = [...Array(rowNum)]
+  let diagonalR = [...Array(rowNum)]
+  for (let i = 0; i < cardLength; i++) {
+    let row = []
+    cardValues.map((_, j) => { row.push(cardValues[j][i]) })
+    targetLines.push(row)
+    diagonal[i] = cardValues[i][i]
+    diagonalR[i] = cardValues[cardValues.length - i - 1][cardValues.length - i - 1]
+  }
+  targetLines.push(diagonal, diagonalR)
+
+  // 集計
+  let totalWatingLines = 0
+  let totalBingoLines = 0
+  targetLines.map((i) => {
+    let calc = i.reduce((calc, j) => { return j.checked ? calc + 1 : calc }, 0)
+    if (calc === i.length - 1) {
+      totalWatingLines++
+    } else if (calc === i.length) {
+      totalBingoLines++
+    }
+  });
+  return [totalWatingLines, totalBingoLines]
 }
