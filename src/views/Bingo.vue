@@ -1,8 +1,8 @@
 <template>
   <div class="bingo">
     <h1>This is a bingo page</h1>
-    <MC></MC>
     <BingoCard></BingoCard>
+    <MC></MC>
   </div>
 </template>
 <script>

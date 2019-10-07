@@ -33,12 +33,12 @@ export default new Vuex.Store({
       // ルーレットストップ
       clearInterval(roulette)
       state.isShuffle = false;
-      // カードに番号があったらtrueにする
-      console.log(state.resultNumber);
+      // カードに番号があったらtrueにして色を変える
       const hoge = state.cardValues.map((i) => {
-        console.log(i.filter((j) => { state.resultNumber === j.number }));
+        let filteredCard = i.filter((j) => { return state.resultNumber === j.number });
+        filteredCard.forEach((j) => { j.checked = true })
+        return filteredCard;
       });
-      console.log(hoge)
     },
     init(state) {
       // 初期化する
