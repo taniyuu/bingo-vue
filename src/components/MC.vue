@@ -1,6 +1,6 @@
 <template>
   <div id="bingo-mc">
-    <h1>This is a MC component</h1>
+    <h1 title="メインキャスターって和製英語なんですね。master of ceremoniesらしいですよ。">This is a MC component</h1>
     <shuffleResult></shuffleResult>
     <shuffleController></shuffleController>
     <shuffleHistory></shuffleHistory>

@@ -2,7 +2,7 @@
   <div v-if="isOver" class="controller">
     <button v-if="isShuffle" @click="stop" type="button">STOP</button>
     <button v-else @click="start" type="button">START</button>
-    <button @click="init" type="button">INIT</button>
+    <button v-bind:disabled="isShuffle" @click="init" type="button">INIT</button>
   </div>
 </template>
 <script>
