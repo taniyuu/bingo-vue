@@ -9,7 +9,9 @@
 export default {
   methods: {
     init() {
-      this.$store.commit("init");
+      if (confirm("カードと出目をリセットします")) {
+        this.$store.commit("init");
+      }
     },
     start() {
       this.$store.commit("start");

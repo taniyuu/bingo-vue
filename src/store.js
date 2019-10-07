@@ -52,6 +52,11 @@ export default new Vuex.Store({
       state.remainingNumber = allRange(maxNumber);
       state.resultNumber = null;
       state.history = [];
+      state.bingoCard = {
+        cardValues: createCardValues(),
+        waitingLines: 0,
+        bingoLines: 0,
+      }
     }
   },
   actions: {
