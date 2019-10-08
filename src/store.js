@@ -115,7 +115,7 @@ function calcStats(cardValues) {
     cardValues.map((_, j) => { row.push(cardValues[j][i]) })
     targetLines.push(row)
     diagonal[i] = cardValues[i][i]
-    diagonalR[i] = cardValues[cardValues.length - i - 1][cardValues.length - i - 1]
+    diagonalR[i] = cardValues[cardValues.length - i - 1][i]
   }
   targetLines.push(diagonal, diagonalR)
 

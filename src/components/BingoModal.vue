@@ -25,21 +25,25 @@
 export default {
   data() {
     return {
-      closeFlg: false
+      isBingo: false
     };
   },
   methods: {
     close() {
-      this.closeFlg = true;
+      this.isBingo = false;
     }
   },
-  computed: {
-    isBingo() {
-      if (!this.closeFlg && this.$store.state.bingoCard.bingoLines === 1) {
-        return true;
+  mounted() {
+    this.$store.watch(
+      state => {
+        return state.bingoCard.bingoLines;
+      },
+      (newVal, oldVal) => {
+        if (oldVal === 0 && newVal === 1) {
+          this.isBingo = true;
+        }
       }
-      return false;
-    }
+    );
   }
 };
 </script>
