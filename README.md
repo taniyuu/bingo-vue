@@ -27,3 +27,6 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## appendix
+- [modal component example(in Japanese)](https://jp.vuejs.org/v2/examples/modal.html)
