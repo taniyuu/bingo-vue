@@ -1,7 +1,7 @@
 <template>
-  <div v-if="isOver" class="controller">
+  <div class="controller">
     <button v-if="isShuffle" @click="stop" type="button">STOP</button>
-    <button v-else @click="start" type="button">START</button>
+    <button v-else v-bind:disabled="isOver" @click="start" type="button">START</button>
     <button v-bind:disabled="isShuffle" @click="init" type="button">INIT</button>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
       return this.$store.state.isShuffle;
     },
     isOver() {
-      return this.$store.state.remainingNumber.length > 0;
+      return this.$store.state.remainingNumber.length === 1;
     }
   }
 };
