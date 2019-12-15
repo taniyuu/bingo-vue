@@ -1,6 +1,6 @@
 {
-    "name":"TAP10",
-    "short_name":"TAP10",
+    "name":"ひとりビンゴゲーム",
+    "short_name":"ひとりビンゴ",
     "icons": [{
         "src": "./img/icons/icon-192x192.png",
         "sizes":"192x192",
@@ -10,7 +10,7 @@
         "sizes":"512x512",
         "type": "image/png"
       }],
-    "start_url": "https://taniyuu.github.io/bingo-vue/?utm_source=homescreen",
+    "start_url": "https://taniyuu.github.io/bingo-vue/#/bingo?utm_source=homescreen",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#FFFFFF"
