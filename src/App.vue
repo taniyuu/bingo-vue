@@ -7,7 +7,23 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  computed: {
+    badgeCount() {
+      return this.$store.getters.getBadgeCount;
+    },
+  },
+  watch: {
+    badgeCount: {
+      immediate: true,
+      handler(val){
+        navigator.setAppBadge(val);
+      }
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

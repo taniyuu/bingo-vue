@@ -17,8 +17,10 @@ export default new Vuex.Store({
       cardValues: createCardValues(),
       waitingLines: 0,
       bingoLines: 0,
+    },
+    badgeCounter: {
+      bingo:0,
     }
-
   },
   mutations: {
     start(state) {
@@ -46,6 +48,7 @@ export default new Vuex.Store({
       });
       // リーチとビンゴの数を計算する
       [state.bingoCard.waitingLines, state.bingoCard.bingoLines] = calcStats(state.bingoCard.cardValues);
+      state.badgeCounter.bingo = state.bingoCard.bingoLines
     },
     init(state) {
       // 初期化する
@@ -57,10 +60,17 @@ export default new Vuex.Store({
         waitingLines: 0,
         bingoLines: 0,
       }
+      state.badgeCounter.bingo = 0
     }
   },
   actions: {
 
+  },
+  getters: {
+    getBadgeCount: state => {
+      const badgeCounter= state.badgeCounter;
+      return Object.keys(badgeCounter).reduce((sum,key)=>sum+badgeCounter[key],0)
+    }
   }
 })
 
