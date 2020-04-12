@@ -17,7 +17,7 @@ jobs:
     # nodeのバージョン一覧
     strategy:
       matrix:
-        node-version: ['12.x','10.x']
+        node-version: ['12.x']
 
     # 各ステップの実行
     steps:
@@ -44,5 +44,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.5.6
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_branch: master
+        publish_branch: gh-pages
         publish_dir: ./docs
