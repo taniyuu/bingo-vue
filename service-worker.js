@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.2d50dc5efbc6d4f595617860f03e0e50.js"
+  "precache-manifest.217cd455e5eda05f0a45da1c0d2581ec.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "bingo-vue"});
