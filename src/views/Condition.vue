@@ -39,8 +39,6 @@
     },
     methods: {
       fillData () {
-          console.log(Object.keys(this.taion))
-          console.log(Object.values(this.taion))
         this.datacollection = {
           labels: Object.keys(this.taion),
           datasets: [

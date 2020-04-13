@@ -25,7 +25,7 @@ export default {
         navigator.setAppBadge(val);
       }
     },
-    '$route' (to, from) {
+    '$route' (to) {
       this.createPageTitle(to.meta);
     }
   },
@@ -36,7 +36,7 @@ export default {
       if(title) document.title = title;
       // メタタグdescription設定
       if(desc) document.querySelector("meta[name='description']").setAttribute('content', desc);
-  	} 
+    } 
   }
 }
 </script>
