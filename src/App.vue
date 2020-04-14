@@ -9,10 +9,6 @@
 </template>
 <script>
 export default {
-  mounted () {
-      const {meta} = this.$route;
-      this.createPageTitle(meta);
-  },
   computed: {
     badgeCount() {
       return this.$store.getters.getBadgeCount;
@@ -25,24 +21,8 @@ export default {
         navigator.setAppBadge(val);
       }
     },
-    '$route' (to) {
-      this.createPageTitle(to.meta);
-    }
   },
   methods: {
-    createPageTitle (meta) {
-      const {title,desc} = meta;
-      // タイトルを設定
-      if(title) {
-        document.title = title;
-        document.querySelector("meta[property='og:title']").setAttribute('content', title);
-      }
-      // メタタグdescription設定
-      if(desc) {
-        document.querySelector("meta[name='description']").setAttribute('content', desc);
-        document.querySelector("meta[property='og:description']").setAttribute('content', desc);
-      }
-    } 
   }
 }
 </script>

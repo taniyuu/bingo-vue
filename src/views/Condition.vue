@@ -11,8 +11,26 @@
     components: {
       LineChart,
     },
+    head: {
+      title() {
+        return {
+          inner: this.title,
+          separator: '|',
+          complement: '捕捉'
+        }
+      },
+      meta() {
+        return [
+          { property: 'og:title', content: this.title + ' | 捕捉' },
+          { property: 'og:description', content: this.description },
+          { name: 'description', content: this.description },
+        ]
+      },
+    },
     data () {
       return {
+        title: 'title-vuehead',
+        description: 'description-vue-head',
         datacollection: {},
         taion: templature,
         options:{

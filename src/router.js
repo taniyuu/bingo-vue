@@ -24,11 +24,7 @@ export default new Router({
     {
       path: '/condition',
       name: 'condition',
-      component: () => import(/* webpackChunkName: "about" */ './views/Condition.vue'),
-      meta: {
-        title: '体温測定',
-        desc: '体温測定した結果を表示します。'
-      }
+      component: () => import(/* webpackChunkName: "about" */ './views/Condition.vue')
     }
   ]
 })
