@@ -11,21 +11,41 @@
     components: {
       LineChart,
     },
-    head: {
-      title() {
-        return {
-          inner: this.title,
-          separator: '|',
-          complement: '捕捉'
+    metaInfo: {
+      meta: [
+        {
+          property: 'og:site_name',
+          content: 'サイト名'
+        },
+        {
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          property: 'og:url',
+          content: 'https://sample.netlify.com'
+        },
+        {
+          property: 'og:title',
+          content: 'タイトル名'
+        },
+        {
+          property: 'og:description',
+          content: '説明文'
+        },
+        {
+          property: 'og:image',
+          content: 'https://sample.netlify.com/sample.jpg'
+        },
+        {
+          property: 'fb:app_id',
+          content: 'アプリID'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         }
-      },
-      meta() {
-        return [
-          { property: 'og:title', content: this.title },
-          { property: 'og:description', content: this.description },
-          { name: 'description', content: this.description },
-        ]
-      },
+      ]
     },
     data () {
       return {
