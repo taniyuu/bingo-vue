@@ -21,7 +21,7 @@
       },
       meta() {
         return [
-          { property: 'og:title', content: this.title + ' | 捕捉' },
+          { property: 'og:title', content: this.title },
           { property: 'og:description', content: this.description },
           { name: 'description', content: this.description },
         ]
@@ -29,8 +29,8 @@
     },
     data () {
       return {
-        title: 'title-vuehead',
-        description: 'description-vue-head',
+        title: '体温測定',
+        description: '体温測定結果をグラフ表示します',
         datacollection: {},
         taion: templature,
         options:{

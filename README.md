@@ -1,5 +1,7 @@
 # bingo-vue
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/665b1b3a-bb1d-45d3-92fc-ce519072980d/deploy-status)](https://app.netlify.com/sites/bingo-vue-1ff3e6/deploys)
+
 ## Project setup
 ```
 yarn install
