@@ -3,7 +3,7 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 module.exports = {
-    publicPath: './',
+    publicPath: '/',
     outputDir: "docs",
     configureWebpack: () => {
         if (process.env.NODE_ENV === 'production') {
