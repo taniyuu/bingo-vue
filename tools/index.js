@@ -40,8 +40,9 @@ async function func1(){
         data: {
           labels: Object.keys(data.data),
           datasets: [{
-            label: '体温',
-            backgroundColor: '#f87979',
+            label: data.label,
+            backgroundColor: data.backgroundColor,
+            borderColor:data.borderColor,
             data: Object.values(data.data),
             fill: false
           }]

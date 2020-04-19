@@ -35,7 +35,7 @@
         },
         {
           property: 'og:image',
-          content: process.env.VUE_APP_ROOT_ADDRESS+'img/icons/icon-192x192.png'
+          content: process.env.VUE_APP_ROOT_ADDRESS+'img/test.jpg'
         },
         {
           property: 'fb:app_id',
@@ -65,8 +65,9 @@
           labels: Object.keys(this.taion),
           datasets: [
             {
-              label: '体温',
-              backgroundColor: '#f87979',
+              label: templature.label,
+              backgroundColor: templature.backgroundColor,
+              borderColor:templature.borderColor,
               data: Object.values(this.taion),
               fill: false
             }

@@ -1,12 +1,13 @@
 {
+    "label": "体温",
+    "backgroundColor": "#35495E",
+    "borderColor":"#5BB884",
     "options":{
         "scales": {
             "yAxes": [{
                 "ticks": {
-                    "max": 37
-                },
-                "gridLines": {
-                    "color": "black"
+                    "max": 37,
+                    "fontColor": "black"
                 }
             }],
             "xAxes": [{
@@ -14,9 +15,6 @@
                     "autoSkip": true,
                     "maxTicksLimit": 6,
                     "fontColor": "black"
-                },
-                "gridLines": {
-                    "color": "black"
                 }
             }]
         },
@@ -59,7 +57,8 @@
         "2020-04-14":34.6,
         "2020-04-15":34.5,
         "2020-04-16":35.0,
-        "2020-04-17":35.2
+        "2020-04-17":35.2,
+        "2020-04-20":35.3
         
     }
 }
