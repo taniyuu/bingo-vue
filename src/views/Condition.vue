@@ -35,7 +35,7 @@
         },
         {
           property: 'og:image',
-          content: 'https://sample.netlify.com/sample.jpg'
+          content: '/img/icons/icon-192x192.png'
         },
         {
           property: 'fb:app_id',
@@ -52,24 +52,8 @@
         title: '体温測定',
         description: '体温測定結果をグラフ表示します',
         datacollection: {},
-        taion: templature,
-        options:{
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        max: 37
-                    }
-                }],
-                xAxes: [{
-                    ticks: {
-                        minRotation: 0,   // ┐表示角度水平
-                        maxRotation: 0,   // ┘
-                        // autoSkip: true,  なくてもよい
-                        maxTicksLimit: 6  // 最大表示数
-                    }
-                }]
-            }
-        }
+        taion: templature.data,
+        options: templature.options
       }
     },
     mounted () {
