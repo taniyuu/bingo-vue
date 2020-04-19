@@ -15,7 +15,7 @@
       meta: [
         {
           property: 'og:site_name',
-          content: 'サイト名'
+          content: 'bingo-vue'
         },
         {
           property: 'og:type',
@@ -23,15 +23,15 @@
         },
         {
           property: 'og:url',
-          content: 'https://sample.netlify.com'
+          content: 'https://bingo-vue-1ff3e6.netlify.app/'
         },
         {
           property: 'og:title',
-          content: 'タイトル名'
+          content: '体温測定'
         },
         {
           property: 'og:description',
-          content: '説明文'
+          content: '測定結果をグラフ表示します'
         },
         {
           property: 'og:image',
@@ -43,7 +43,7 @@
         },
         {
           name: 'twitter:card',
-          content: 'summary_large_image'
+          content: 'summary'
         }
       ]
     },
