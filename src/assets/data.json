@@ -4,16 +4,27 @@
             "yAxes": [{
                 "ticks": {
                     "max": 37
+                },
+                "gridLines": {
+                    "color": "black"
                 }
             }],
             "xAxes": [{
                 "ticks": {
                     "autoSkip": true,
-                    "maxTicksLimit": 6 
+                    "maxTicksLimit": 6,
+                    "fontColor": "black"
+                },
+                "gridLines": {
+                    "color": "black"
                 }
             }]
+        },
+        "legend": {
+            "labels": {
+                "fontColor": "black"
+            }
         }
-
     },
     "data": {
         "2020-03-02":34.5,
