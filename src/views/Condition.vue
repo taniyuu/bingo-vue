@@ -11,42 +11,6 @@
     components: {
       LineChart,
     },
-    metaInfo: {
-      meta: [
-        {
-          property: 'og:site_name',
-          content: 'サイト名'
-        },
-        {
-          property: 'og:type',
-          content: 'website'
-        },
-        {
-          property: 'og:url',
-          content: 'https://sample.netlify.com'
-        },
-        {
-          property: 'og:title',
-          content: 'タイトル名'
-        },
-        {
-          property: 'og:description',
-          content: '説明文'
-        },
-        {
-          property: 'og:image',
-          content: 'https://sample.netlify.com/sample.jpg'
-        },
-        {
-          property: 'fb:app_id',
-          content: 'アプリID'
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        }
-      ]
-    },
     data () {
       return {
         title: '体温測定',
