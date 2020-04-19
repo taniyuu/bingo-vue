@@ -23,7 +23,7 @@
         },
         {
           property: 'og:url',
-          content: 'https://bingo-vue-1ff3e6.netlify.app/'
+          content: process.env.VUE_APP_ROOT_ADDRESS
         },
         {
           property: 'og:title',
@@ -35,7 +35,7 @@
         },
         {
           property: 'og:image',
-          content: '/img/icons/icon-192x192.png'
+          content: process.env.VUE_APP_ROOT_ADDRESS+'img/icons/icon-192x192.png'
         },
         {
           property: 'fb:app_id',
@@ -53,7 +53,7 @@
         description: '体温測定結果をグラフ表示します',
         datacollection: {},
         taion: templature.data,
-        options: templature.options
+        options: templature.options,
       }
     },
     mounted () {
