@@ -1,0 +1,19 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "tools for github pages contents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuki Taniyama",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "chartjs-node-canvas": "^3.0.6",
+    "jimp": "^0.10.2"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7"
+  }
+}
