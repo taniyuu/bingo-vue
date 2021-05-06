@@ -9,9 +9,9 @@
   "author": "Yuki Taniyama",
   "license": "MIT",
   "dependencies": {
-    "chart.js": "^2.9.3",
-    "chartjs-node-canvas": "^3.0.6",
-    "jimp": "^0.10.2"
+    "chart.js": "^2.9.4",
+    "chartjs-node-canvas": "^3.1.0",
+    "jimp": "^0.10.3"
   },
   "devDependencies": {
     "json-loader": "^0.5.7"
